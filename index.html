@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abel Sánchez Ramos | Administrador de Sistemas Junior & Especialista en Ciberseguridad IT</title>
-    <meta name="description" content="Portfolio profesional de Abel Sánchez Ramos. Administrador de Sistemas Junior y Técnico de Ciberseguridad IT en Huelva. Experiencia en Microsoft 365, Azure AD, Active Directory, SIEM Wazuh/Splunk y soporte técnico.">
+    <title>Abel Sánchez Ramos | Administrador de Sistemas y Ciberseguridad Junior</title>
+    <meta name="description" content="Portfolio profesional de Abel Sánchez Ramos. Administrador de Sistemas y Ciberseguridad Junior. Especializado en Microsoft 365, Azure AD, Active Directory, redes y soporte técnico.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -54,15 +54,12 @@
         .glow-effect {
             box-shadow: 0 0 45px -10px rgba(14, 165, 233, 0.2);
         }
-        .glow-effect-green {
-            box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.2);
+        .avatar-glow {
+            box-shadow: 0 0 50px rgba(14, 165, 233, 0.25), 0 0 90px rgba(16, 185, 129, 0.15);
         }
         .cyber-grid {
             background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
             background-size: 28px 28px;
-        }
-        .avatar-glow {
-            box-shadow: 0 0 50px rgba(14, 165, 233, 0.25), 0 0 100px rgba(16, 185, 129, 0.1);
         }
     </style>
 </head>
@@ -80,12 +77,8 @@
 
             <!-- Desktop Nav -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#sobre-mi" class="hover:text-brand-400 transition-colors">Sobre mí</a>
-                <a href="#skills" class="hover:text-brand-400 transition-colors">Stack Técnico</a>
-                <a href="#labs" class="hover:text-brand-400 transition-colors flex items-center gap-1.5">
-                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Proyectos & Labs
-                </a>
+                <a href="#acerca-de" class="hover:text-brand-400 transition-colors">Acerca de</a>
+                <a href="#stack" class="hover:text-brand-400 transition-colors">Stack</a>
                 <a href="#experiencia" class="hover:text-brand-400 transition-colors">Experiencia</a>
                 <a href="#formacion" class="hover:text-brand-400 transition-colors">Formación</a>
                 <a href="#contacto" class="px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold transition-all shadow-md shadow-brand-600/20">
@@ -101,16 +94,15 @@
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#sobre-mi" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">Sobre mí</a>
-            <a href="#skills" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">Stack Técnico</a>
-            <a href="#labs" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">Proyectos & Labs</a>
+            <a href="#acerca-de" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">Acerca de</a>
+            <a href="#stack" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">Stack</a>
             <a href="#experiencia" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">Experiencia</a>
             <a href="#formacion" class="block py-2 text-slate-300 hover:text-brand-400 font-medium">Formación</a>
             <a href="#contacto" class="block py-2 text-brand-400 font-semibold">Contactar</a>
         </div>
     </header>
 
-    <!-- 1. HERO SECTION -->
+    <!-- TITULAR / HERO SECTION -->
     <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 cyber-grid overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#0B1120]/70 to-[#0B1120] pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -118,36 +110,36 @@
                 
                 <!-- Columna Izquierda: Información Principal -->
                 <div class="lg:col-span-7">
-                    <!-- Status Badge -->
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-6">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
                         <span>Disponible para incorporación inmediata | Garantía Juvenil</span>
                     </div>
 
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-4">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-3">
                         Abel Sánchez Ramos
                     </h1>
+                    
                     <div class="text-2xl sm:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-sky-300 to-indigo-300 mb-6">
-                        Administrador de Sistemas Junior & Especialista en Ciberseguridad IT
+                        Administrador de Sistemas y Ciberseguridad Junior
                     </div>
 
                     <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 font-normal">
-                        Especializado en la administración de entornos corporativos <strong class="text-white">Microsoft 365, Azure AD (Entra ID) y Active Directory</strong>, soporte técnico a usuarios, resolución ágil de incidencias, bastionado (hardening) y gestión de identidades y accesos (IAM).
+                        Administrador de Sistemas IT junior especializado en Microsoft 365, Azure AD, Active Directory, redes y soporte técnico, actualmente ampliando mi perfil hacia la ciberseguridad defensiva y la administración segura de infraestructuras.
                     </p>
 
                     <!-- Contact & CTA Buttons -->
                     <div class="flex flex-wrap items-center gap-4 mb-8">
-                        <a href="#labs" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold transition-all shadow-lg shadow-brand-500/25">
-                            <i data-lucide="terminal" class="w-4 h-4"></i>
-                            Ver Proyectos & Labs
-                        </a>
-                        <a href="mailto:asannchez.2005@gmail.com" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 text-slate-200 font-semibold transition-all">
-                            <i data-lucide="mail" class="w-4 h-4 text-brand-400"></i>
+                        <a href="#contacto" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-semibold transition-all shadow-lg shadow-brand-500/25">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
                             Contactar
                         </a>
-                        <a href="tel:642056031" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-600 text-slate-300 hover:text-white transition-all text-sm font-medium">
+                        <a href="tel:642056031" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 text-slate-200 font-semibold transition-all">
                             <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i>
                             642 05 60 31
+                        </a>
+                        <a href="mailto:asannchez.2005@gmail.com" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-600 text-slate-300 hover:text-white transition-all text-sm font-medium">
+                            <i data-lucide="send" class="w-4 h-4 text-brand-400"></i>
+                            asannchez.2005@gmail.com
                         </a>
                     </div>
 
@@ -157,7 +149,7 @@
                         <span>•</span>
                         <span class="flex items-center gap-1.5"><i data-lucide="car" class="w-4 h-4 text-emerald-400"></i> Permiso B (Vehículo propio)</span>
                         <span>•</span>
-                        <span class="flex items-center gap-1.5"><i data-lucide="languages" class="w-4 h-4 text-sky-400"></i> Inglés B1 (Trinity)</span>
+                        <span class="flex items-center gap-1.5"><i data-lucide="languages" class="w-4 h-4 text-sky-400"></i> Español (Nativo) | Inglés (B1)</span>
                     </div>
                 </div>
 
@@ -166,14 +158,11 @@
                     <div class="relative group">
                         <div class="absolute -inset-1.5 bg-gradient-to-r from-brand-500 to-emerald-500 rounded-full blur-xl opacity-40 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
                         <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-4 border-slate-800/80 bg-slate-900 avatar-glow flex items-center justify-center">
-                            <!-- Imagen de perfil -->
-                            <img src="foto-perfil.png" alt="Abel Sánchez Ramos - Administrador de Sistemas Junior" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                            <img src="foto-perfil.png" alt="Abel Sánchez Ramos - Administrador de Sistemas y Ciberseguridad Junior" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
                         </div>
-                        
-                        <!-- Badge flotante inferior -->
                         <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-slate-900/95 border border-slate-700/80 px-4 py-1.5 rounded-full flex items-center gap-2 text-xs font-semibold text-slate-200 shadow-xl backdrop-blur-sm whitespace-nowrap">
                             <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                            <span>SysAdmin & SOC Junior</span>
+                            <span>SysAdmin & Ciberseguridad Junior</span>
                         </div>
                     </div>
                 </div>
@@ -182,514 +171,195 @@
         </div>
     </section>
 
-    <!-- 2. SOBRE MÍ (ABOUT ME) -->
-    <section id="sobre-mi" class="py-20 bg-slate-900/40 border-t border-b border-slate-800/60">
+    <!-- ACERCA DE -->
+    <section id="acerca-de" class="py-20 bg-slate-900/40 border-t border-b border-slate-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <!-- Columna Izquierda: Tarjeta de Enfoque -->
-                <div class="lg:col-span-5">
-                    <div class="p-6 md:p-8 rounded-2xl bg-brand-card border border-brand-cardBorder glow-effect relative overflow-hidden">
-                        <div class="absolute -right-8 -top-8 w-32 h-32 bg-brand-500/10 rounded-full blur-2xl"></div>
-                        <div class="flex items-center gap-3 text-brand-400 mb-4">
-                            <i data-lucide="cpu" class="w-6 h-6"></i>
-                            <span class="text-xs uppercase tracking-wider font-bold">Perfil & Enfoque Operativo</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-4">Resolución Técnica, Ciberseguridad y Continuidad del Servicio</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed mb-6">
-                            Compromiso con el mantenimiento y la disponibilidad de infraestructuras IT corporativas, aplicando buenas prácticas de hardening y control estricto de accesos.
-                        </p>
-                        
-                        <!-- Checklist Clave -->
-                        <div class="space-y-3 text-xs text-slate-300">
-                            <div class="flex items-start gap-2.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                                <span><strong>Administración Cloud & On-Prem:</strong> Microsoft 365 Admin Center, Azure Portal y Active Directory Domain Services.</span>
-                            </div>
-                            <div class="flex items-start gap-2.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                                <span><strong>Entornos Exigentes:</strong> Experiencia demostrada en soporte a usuarios del sector industrial (Geotexan) y sanitario de alta disponibilidad (Hospital Infanta Elena).</span>
-                            </div>
-                            <div class="flex items-start gap-2.5">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                                <span><strong>Seguridad Defensiva:</strong> Especialización técnica en SIEM (Wazuh/Splunk), gestión de identidades IAM y copias de seguridad.</span>
-                            </div>
-                        </div>
-
-                        <div class="mt-6 pt-6 border-t border-slate-800 grid grid-cols-2 gap-3 text-xs text-slate-400">
-                            <div><strong class="text-slate-300 block">Ubicación:</strong> San Juan del Puerto, Huelva</div>
-                            <div><strong class="text-slate-300 block">Movilidad:</strong> Carnet B + Vehículo</div>
-                            <div><strong class="text-slate-300 block">Programa:</strong> Garantía Juvenil</div>
-                            <div><strong class="text-slate-300 block">Idiomas:</strong> Español (Nativo), Inglés (B1)</div>
-                        </div>
-                    </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 text-brand-400 font-semibold text-sm mb-3">
+                    <i data-lucide="user" class="w-4 h-4"></i>
+                    <span>ACERCA DE</span>
                 </div>
+                <h2 class="text-3xl font-extrabold text-white tracking-tight mb-8">
+                    Perfil Profesional y Enfoque Técnico
+                </h2>
 
-                <!-- Columna Derecha: Narrativa Profesional -->
-                <div class="lg:col-span-7">
-                    <div class="inline-flex items-center gap-2 text-brand-400 font-semibold text-sm mb-3">
-                        <i data-lucide="user" class="w-4 h-4"></i>
-                        <span>RESUMEN PROFESIONAL</span>
-                    </div>
-                    <h2 class="text-3xl font-extrabold text-white tracking-tight mb-6">
-                        Administración de infraestructuras IT con sólida base en seguridad
-                    </h2>
-                    <div class="space-y-4 text-slate-300 leading-relaxed text-sm md:text-base">
-                        <p>
-                            Soy Administrador de Sistemas IT especializado en Ciberseguridad. Mi trayectoria formativa integra una base sólida de 5 años en el IES La Marisma cursando el <strong class="text-white">CFGM en SMR</strong>, el <strong class="text-white">CFGS en ASIR</strong> y el <strong class="text-white">Curso de Especialización en Ciberseguridad en Entornos de las TI</strong>.
+                <div class="space-y-6 text-slate-300 leading-relaxed text-base">
+                    <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder glow-effect">
+                        <p class="mb-4">
+                            Administrador de Sistemas IT junior especializado en Microsoft 365, Azure AD, Active Directory, redes y soporte técnico, actualmente ampliando mi perfil hacia la ciberseguridad defensiva y la administración segura de infraestructuras.
                         </p>
-                        <p>
-                            Durante mis periodos de prácticas en <strong class="text-white">Geotexan S.A.</strong> y en el <strong class="text-white">Hospital Infanta Elena</strong>, he asumido tareas críticas de administración de identidades en Microsoft 365 / Azure AD, soporte a usuarios en remoto y presencial, mantenimiento de hardware y redes departamentales, asegurando siempre la continuidad operativa y mejorando los tiempos de respuesta.
+                        <p class="mb-4">
+                            He trabajado en entornos corporativos y sanitarios realizando soporte presencial y remoto, gestión de usuarios y permisos, configuración de equipos, mantenimiento de redes, resolución de incidencias, copias de seguridad, documentación técnica y soporte sobre plataformas cloud y colaborativas.
                         </p>
-                        <p>
-                            Paralelamente, refuerzo mis competencias desplegando <strong class="text-white">Home Labs</strong> (Proxmox VE, VMware, Wazuh SIEM, Splunk y scripts en Python/Bash), donde simulo entornos empresariales, configuro directivas GPO de bastionado y realizo análisis de vulnerabilidades y logs.
+                        <p class="mb-4">
+                            Actualmente estoy profundizando en ciberseguridad, hardening, gestión de accesos, análisis de vulnerabilidades, buenas prácticas SecOps y automatización de procesos con herramientas como n8n.
                         </p>
+                        <div class="pt-4 border-t border-slate-800">
+                            <h3 class="text-xs font-bold uppercase text-brand-400 tracking-wider mb-2">Interés y disponibilidad profesional:</h3>
+                            <p class="text-sm text-slate-300 font-medium">
+                                Busco oportunidades como <span class="text-white font-semibold">Administrador de Sistemas Junior, Técnico de Soporte IT, Helpdesk N1/N2, Técnico de Redes Junior, Técnico Junior de Ciberseguridad o Analista SOC Junior</span>.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. TECH STACK INTERACTIVO -->
-    <section id="skills" class="py-20">
+    <!-- STACK TECNOLÓGICO -->
+    <section id="stack" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
+            <div class="text-center max-w-2xl mx-auto mb-12">
                 <div class="inline-flex items-center gap-2 text-brand-400 font-semibold text-sm mb-2">
                     <i data-lucide="layers" class="w-4 h-4"></i>
-                    <span>COMPETENCIAS TÉCNICAS</span>
+                    <span>STACK TECNOLÓGICO</span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                    Stack Tecnológico & Habilidades
+                    Tecnologías y Herramientas
                 </h2>
                 <p class="text-slate-400 text-sm mt-3">
-                    Herramientas, plataformas y metodologías aplicadas según mi perfil profesional y experiencia técnica.
+                    Stack técnico principal utilizado en administración, redes, ciberseguridad y soporte:
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Tarjeta 1: Sistemas y Cloud -->
-                <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder hover:border-brand-500/50 transition-all group">
-                    <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                        <i data-lucide="cloud" class="w-6 h-6"></i>
+            <div class="max-w-4xl mx-auto">
+                <div class="p-8 rounded-2xl bg-brand-card border border-brand-cardBorder text-center">
+                    <div class="flex flex-wrap items-center justify-center gap-3">
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-sky-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-brand-500 transition-all">
+                            <i data-lucide="server" class="w-4 h-4 text-sky-400"></i> Windows Server
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-sky-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-brand-500 transition-all">
+                            <i data-lucide="users" class="w-4 h-4 text-sky-400"></i> Active Directory
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-sky-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-brand-500 transition-all">
+                            <i data-lucide="cloud" class="w-4 h-4 text-sky-400"></i> Azure AD
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-sky-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-brand-500 transition-all">
+                            <i data-lucide="grid" class="w-4 h-4 text-sky-400"></i> Microsoft 365
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-sky-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-brand-500 transition-all">
+                            <i data-lucide="folder-git-2" class="w-4 h-4 text-sky-400"></i> SharePoint
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-emerald-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-emerald-500 transition-all">
+                            <i data-lucide="network" class="w-4 h-4 text-emerald-400"></i> Redes
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-emerald-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-emerald-500 transition-all">
+                            <i data-lucide="lock" class="w-4 h-4 text-emerald-400"></i> VPN
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-emerald-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-emerald-500 transition-all">
+                            <i data-lucide="shield-alert" class="w-4 h-4 text-emerald-400"></i> Firewalls
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-amber-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-amber-500 transition-all">
+                            <i data-lucide="database-backup" class="w-4 h-4 text-amber-400"></i> Backups
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-indigo-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-indigo-500 transition-all">
+                            <i data-lucide="terminal" class="w-4 h-4 text-indigo-400"></i> PowerShell
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-purple-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-purple-500 transition-all">
+                            <i data-lucide="layout" class="w-4 h-4 text-purple-400"></i> WordPress
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-rose-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-rose-500 transition-all">
+                            <i data-lucide="shield" class="w-4 h-4 text-rose-400"></i> Hacking Ético
+                        </span>
+                        <span class="px-4 py-2 rounded-xl bg-slate-800/90 text-cyan-300 border border-slate-700/80 font-medium text-sm flex items-center gap-2 hover:border-cyan-500 transition-all">
+                            <i data-lucide="workflow" class="w-4 h-4 text-cyan-400"></i> Automatización / n8n
+                        </span>
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Sistemas & Cloud</h3>
-                    <p class="text-xs text-slate-400 mb-4">Administración de plataformas corporativas y servidores.</p>
-                    <ul class="space-y-2 text-xs text-slate-300">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>Microsoft 365 & Admin Center</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>Azure AD (Microsoft Entra ID)</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>Active Directory On-Premise</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>Windows Server & Linux Server</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-400"></span>Debian / Ubuntu / Kali Linux</li>
-                    </ul>
                 </div>
-
-                <!-- Tarjeta 2: Ciberseguridad -->
-                <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder hover:border-emerald-500/50 transition-all group">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                        <i data-lucide="shield-check" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Ciberseguridad</h3>
-                    <p class="text-xs text-slate-400 mb-4">Protección de sistemas, identidades y monitorización.</p>
-                    <ul class="space-y-2 text-xs text-slate-300">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Gestión de Identidades y Accesos (IAM)</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Hardening de Sistemas & GPOs</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>SIEM Wazuh / Splunk & Logs</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Gestión de Vulnerabilidades</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Políticas de Copias de Seguridad</li>
-                    </ul>
-                </div>
-
-                <!-- Tarjeta 3: Soporte IT & Operaciones -->
-                <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder hover:border-indigo-500/50 transition-all group">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                        <i data-lucide="headphones" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Soporte IT & Puesto</h3>
-                    <p class="text-xs text-slate-400 mb-4">Resolución de incidencias y mantenimiento HW/SW.</p>
-                    <ul class="space-y-2 text-xs text-slate-300">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Resolución de Incidencias N1 / N2</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Soporte Remoto y Presencial</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Instalación y Configuración de Puestos</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Diagnóstico de Hardware y Redes</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Atención a Usuarios y Ticketing</li>
-                    </ul>
-                </div>
-
-                <!-- Tarjeta 4: Herramientas & Virtualización -->
-                <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder hover:border-amber-500/50 transition-all group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
-                        <i data-lucide="wrench" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-2">Herramientas & Infra</h3>
-                    <p class="text-xs text-slate-400 mb-4">Software de virtualización, control remoto y scripting.</p>
-                    <ul class="space-y-2 text-xs text-slate-300">
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>VMware ESXi / Workstation & VirtualBox</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Proxmox VE</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>AnyDesk / RustDesk / TeamViewer</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Python & Bash Scripting</li>
-                        <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Consultas SQL para Auditoría</li>
-                    </ul>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- 4. SECCIÓN DESTACADA: PROYECTOS TÉCNICOS & HOME LABS -->
-    <section id="labs" class="py-20 bg-slate-900/40 border-t border-b border-slate-800/60">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
-                <div>
-                    <div class="inline-flex items-center gap-2 text-brand-400 font-semibold text-sm mb-2">
-                        <i data-lucide="flask-conical" class="w-4 h-4"></i>
-                        <span>PRACTICAL LABS & HOME LAB ENVIRONMENT</span>
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                        Proyectos Técnicos y Laboratorios Prácticos
-                    </h2>
-                    <p class="text-slate-400 text-sm mt-2 max-w-2xl">
-                        Despliegues y simulaciones reales orientadas a replicar infraestructuras corporativas, monitorización defensiva y automatización.
-                    </p>
-                </div>
-            </div>
-
-            <div class="space-y-12">
-
-                <!-- LAB 1: Active Directory & GPO Hardening -->
-                <article class="p-6 md:p-8 rounded-2xl bg-brand-card border border-brand-cardBorder glow-effect">
-                    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-                        <div class="flex items-center gap-3">
-                            <span class="p-2.5 rounded-xl bg-brand-500/10 border border-brand-500/20 text-brand-400">
-                                <i data-lucide="shield" class="w-6 h-6"></i>
-                            </span>
-                            <div>
-                                <span class="text-xs font-semibold text-brand-400 uppercase tracking-wider">Laboratorio de Infraestructura & IAM</span>
-                                <h3 class="text-xl md:text-2xl font-bold text-white">Despliegue de Directorio Activo Seguro con GPOs de Hardening y Microsoft Entra ID</h3>
-                            </div>
-                        </div>
-                        <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/30 text-xs font-medium">Arquitectura Híbrida</span>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                        <div class="lg:col-span-8 space-y-6">
-                            <div>
-                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2 flex items-center gap-1.5">
-                                    <i data-lucide="target" class="w-4 h-4 text-rose-400"></i> Problema / Objetivo
-                                </h4>
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    Implementar una infraestructura de dominio empresarial segura desde cero sobre Windows Server 2022, integrando sincronización híbrida hacia la nube y aplicando directivas restrictivas para mitigar movimientos laterales y ejecuciones no autorizadas.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2 flex items-center gap-1.5">
-                                    <i data-lucide="list-checks" class="w-4 h-4 text-brand-400"></i> Implementación Técnica Paso a Paso
-                                </h4>
-                                <ul class="space-y-2 text-xs md:text-sm text-slate-300">
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-brand-400 font-bold code-font">01.</span>
-                                        <span>Instalación y configuración del rol <strong class="text-white">AD DS y DNS Server</strong> con estructura jerárquica de Unidades Organizativas (OUs) divididas por departamentos y niveles de privilegio.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-brand-400 font-bold code-font">02.</span>
-                                        <span>Despliegue de directivas de grupo (<strong class="text-white">GPOs</strong>) para bastionado: deshabilitación de protocolos obsoletos (SMBv1, LLMNR), bloqueo de macros no firmadas y restricción de software mediante AppLocker.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-brand-400 font-bold code-font">03.</span>
-                                        <span>Integración de <strong class="text-white">Microsoft Entra Connect</strong> para sincronización de identidades hacia Microsoft 365, configurando autenticación multifactor (MFA) obligatoria y políticas de acceso condicional.</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2 flex items-center gap-1.5">
-                                    <i data-lucide="award" class="w-4 h-4 text-emerald-400"></i> Resultados & Validación
-                                </h4>
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    Reducción de la superficie de ataque del puesto. Auditoría exitosa de directivas validada con <span class="code-font text-brand-300">gpresult /v</span> y bloqueo verificado de ejecuciones no permitidas en clientes Windows 10/11.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Sidebar del Proyecto -->
-                        <div class="lg:col-span-4 bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-4">
-                            <div>
-                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Tecnologías & Entorno</span>
-                                <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2.5 py-1 bg-slate-800 text-sky-300 rounded text-xs code-font">Windows Server 2022</span>
-                                    <span class="px-2.5 py-1 bg-slate-800 text-sky-300 rounded text-xs code-font">Active Directory</span>
-                                    <span class="px-2.5 py-1 bg-slate-800 text-sky-300 rounded text-xs code-font">GPOs / Hardening</span>
-                                    <span class="px-2.5 py-1 bg-slate-800 text-sky-300 rounded text-xs code-font">Microsoft Entra ID</span>
-                                    <span class="px-2.5 py-1 bg-slate-800 text-sky-300 rounded text-xs code-font">VMware / VirtualBox</span>
-                                </div>
-                            </div>
-                            <div class="pt-4 border-t border-slate-800">
-                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Habilidades Demostradas</span>
-                                <ul class="text-xs text-slate-300 space-y-1.5">
-                                    <li>✓ Gestión de identidades híbridas</li>
-                                    <li>✓ Auditoría de permisos NTFS / Compartidos</li>
-                                    <li>✓ Implementación de políticas de contraseñas</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- LAB 2: SIEM Wazuh / Splunk & Detección de Amenazas -->
-                <article class="p-6 md:p-8 rounded-2xl bg-brand-card border border-brand-cardBorder glow-effect-green">
-                    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-                        <div class="flex items-center gap-3">
-                            <span class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
-                                <i data-lucide="radar" class="w-6 h-6"></i>
-                            </span>
-                            <div>
-                                <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Laboratorio SOC & Seguridad Defensiva</span>
-                                <h3 class="text-xl md:text-2xl font-bold text-white">Entorno de Detección de Amenazas con SIEM (Wazuh & Splunk) y Simulación de Incidentes</h3>
-                            </div>
-                        </div>
-                        <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-xs font-medium">SOC Tier 1 Lab</span>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                        <div class="lg:col-span-8 space-y-6">
-                            <div>
-                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2 flex items-center gap-1.5">
-                                    <i data-lucide="target" class="w-4 h-4 text-rose-400"></i> Problema / Objetivo
-                                </h4>
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    Diseñar una plataforma de monitorización y correlación de eventos centralizada para detectar en tiempo real intentos de intrusión, fuerza bruta y modificaciones no autorizadas en servidores críticos.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2 flex items-center gap-1.5">
-                                    <i data-lucide="list-checks" class="w-4 h-4 text-emerald-400"></i> Implementación Técnica Paso a Paso
-                                </h4>
-                                <ul class="space-y-2 text-xs md:text-sm text-slate-300">
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-emerald-400 font-bold code-font">01.</span>
-                                        <span>Despliegue de <strong class="text-white">Wazuh Server & Dashboard</strong> sobre Ubuntu Server y configuración de agentes en clientes Windows 10 y servidores Debian.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-emerald-400 font-bold code-font">02.</span>
-                                        <span>Configuración de módulos <strong class="text-white">FIM (File Integrity Monitoring)</strong> para alertar sobre modificaciones en ficheros críticos (<code class="code-font text-emerald-300">/etc/passwd</code>, <code class="code-font text-emerald-300">System32</code>) y módulo de detección de vulnerabilidades CVE.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-emerald-400 font-bold code-font">03.</span>
-                                        <span>Simulación de ataques con <strong class="text-white">Kali Linux</strong> (fuerza bruta SSH con Hydra y escaneos Nmap), analizando la respuesta del SIEM y configurando reglas de detección personalizadas.</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2 flex items-center gap-1.5">
-                                    <i data-lucide="award" class="w-4 h-4 text-emerald-400"></i> Resultados & Validación
-                                </h4>
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    Generación de paneles interactivos de seguridad (mapeo MITRE ATT&CK), alertas automáticas por correo y respuesta activa bloqueando IPs atacantes mediante iptables.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Sidebar del Proyecto -->
-                        <div class="lg:col-span-4 bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-4">
-                            <div>
-                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Tecnologías & Entorno</span>
-                                <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2.5 py-1 bg-slate-800 text-emerald-300 rounded text-xs code-font">Wazuh SIEM</span>
-                                    <span class="px-2.5 py-1 bg-slate-800 text-emerald-300 rounded text-xs code-font">Splunk</span>
-                                    <span class="px-2.5 py-1 bg-slate-800 text-emerald-300 rounded text-xs code-font">Proxmox VE</span>
-                                    <span class="px-2.5 py-1 bg-slate-800 text-emerald-300 rounded text-xs code-font">Kali Linux</span>
-                                    <span class="px-2.5 py-1 bg-slate-800 text-emerald-300 rounded text-xs code-font">Syslog & FIM</span>
-                                </div>
-                            </div>
-                            <div class="pt-4 border-t border-slate-800">
-                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Habilidades Demostradas</span>
-                                <ul class="text-xs text-slate-300 space-y-1.5">
-                                    <li>✓ Triaje y análisis de logs de seguridad</li>
-                                    <li>✓ Creación de reglas XML personalizadas</li>
-                                    <li>✓ Respuesta activa y contención</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- LAB 3: Scripting, Automatización & Auditoría SQL -->
-                <article class="p-6 md:p-8 rounded-2xl bg-brand-card border border-brand-cardBorder glow-effect">
-                    <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-                        <div class="flex items-center gap-3">
-                            <span class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400">
-                                <i data-lucide="terminal" class="w-6 h-6"></i>
-                            </span>
-                            <div>
-                                <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider">Automatización & Análisis</span>
-                                <h3 class="text-xl md:text-2xl font-bold text-white">Suite de Scripts en Python y Consultas SQL para Auditoría de Registros IT</h3>
-                            </div>
-                        </div>
-                        <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs font-medium">SysAdmin Tooling</span>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                        <div class="lg:col-span-8 space-y-6">
-                            <div>
-                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2 flex items-center gap-1.5">
-                                    <i data-lucide="target" class="w-4 h-4 text-rose-400"></i> Problema / Objetivo
-                                </h4>
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    Automatizar la detección de anomalías en inicios de sesión y tareas de mantenimiento preventivo de servidores, optimizando la revisión de ficheros de registro dispersos.
-                                </p>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2 flex items-center gap-1.5">
-                                    <i data-lucide="list-checks" class="w-4 h-4 text-amber-400"></i> Implementación Técnica Paso a Paso
-                                </h4>
-                                <ul class="space-y-2 text-xs md:text-sm text-slate-300">
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-amber-400 font-bold code-font">01.</span>
-                                        <span>Desarrollo de scripts en <strong class="text-white">Python</strong> para analizar logs de autenticación (Auth.log y Event Viewer), extrayendo IPs sospechosas y patrones de intentos fallidos.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-amber-400 font-bold code-font">02.</span>
-                                        <span>Construcción de consultas <strong class="text-white">SQL relacionales</strong> (JOIN, subconsultas, agrupaciones) para auditar registros de bases de datos e identificar cuentas inactivas o accesos anómalos.</span>
-                                    </li>
-                                    <li class="flex items-start gap-2">
-                                        <span class="text-amber-400 font-bold code-font">03.</span>
-                                        <span>Script en <strong class="text-white">Bash</strong> programado en tareas Cron para la verificación automática del almacenamiento, comprobación de servicios y rotación de copias de seguridad.</span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h4 class="text-xs font-bold uppercase text-slate-400 tracking-wider mb-2 flex items-center gap-1.5">
-                                    <i data-lucide="award" class="w-4 h-4 text-emerald-400"></i> Resultados & Validación
-                                </h4>
-                                <p class="text-sm text-slate-300 leading-relaxed">
-                                    Reducción significativa del tiempo de revisión rutinaria de logs y generación automática de reportes para auditorías técnicas.
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Sidebar del Proyecto -->
-                        <div class="lg:col-span-4 bg-slate-900/80 p-5 rounded-xl border border-slate-800 space-y-4">
-                            <div>
-                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Tecnologías & Entorno</span>
-                                <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2.5 py-1 bg-slate-800 text-amber-300 rounded text-xs code-font">Python 3</span>
-                                    <span class="px-2.5 py-1 bg-slate-800 text-amber-300 rounded text-xs code-font">Bash / Shell</span>
-                                    <span class="px-2.5 py-1 bg-slate-800 text-amber-300 rounded text-xs code-font">SQL (PostgreSQL / MariaDB)</span>
-                                    <span class="px-2.5 py-1 bg-slate-800 text-amber-300 rounded text-xs code-font">Linux CLI</span>
-                                </div>
-                            </div>
-                            <div class="pt-4 border-t border-slate-800">
-                                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Habilidades Demostradas</span>
-                                <ul class="text-xs text-slate-300 space-y-1.5">
-                                    <li>✓ Parsing de logs estructurados y texto plano</li>
-                                    <li>✓ Consultas SQL de auditoría de usuarios</li>
-                                    <li>✓ Automatización con tareas programadas</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. EXPERIENCIA LABORAL (PRÁCTICAS FORMATIVAS) -->
-    <section id="experiencia" class="py-20">
+    <!-- EXPERIENCIA -->
+    <section id="experiencia" class="py-20 bg-slate-900/40 border-t border-b border-slate-800/60">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <div class="inline-flex items-center gap-2 text-brand-400 font-semibold text-sm mb-2">
                     <i data-lucide="briefcase" class="w-4 h-4"></i>
-                    <span>EXPERIENCIA LABORAL</span>
+                    <span>EXPERIENCIA</span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                    Experiencia Práctica en Entornos Reales
+                    Experiencia Laboral
                 </h2>
                 <p class="text-slate-400 text-sm mt-3">
-                    Estancias formativas en entornos corporativos e instituciones de alta exigencia técnica.
+                    Estancias formativas y funciones desempeñadas en entornos reales.
                 </p>
             </div>
 
             <div class="max-w-4xl mx-auto space-y-8">
                 
-                <!-- Experiencia 1: Geotexan S.A. -->
-                <div class="p-6 sm:p-8 rounded-2xl bg-brand-card border border-brand-cardBorder relative">
+                <!-- Puesto 1: Geotexan S.A. -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-brand-card border border-brand-cardBorder">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                         <div>
-                            <span class="text-xs font-bold text-brand-400 uppercase tracking-wider">Entorno Corporativo / Industrial</span>
                             <h3 class="text-xl font-bold text-white">Estudiante en Prácticas, Administrador de Sistemas IT</h3>
                             <div class="text-sm font-medium text-slate-300 flex items-center gap-2 mt-1">
                                 <span class="text-white font-semibold">Geotexan S.A.</span>
-                                <span>•</span>
+                                <span>|</span>
                                 <span class="text-slate-400">Minas de Riotinto, Huelva</span>
                             </div>
                         </div>
                         <span class="self-start sm:self-center text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 code-font">
-                            Mar 2025 – Jun 2025
+                            Mar 2025 - Jun 2025
                         </span>
                     </div>
 
-                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+                    <ul class="space-y-2 text-sm text-slate-300">
                         <li class="flex items-start gap-2.5">
-                            <i data-lucide="check" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
-                            <span>Administración y aprovisionamiento en <strong>Microsoft 365, Azure AD (Entra ID)</strong> y <strong>Active Directory</strong> en entorno corporativo.</span>
+                            <span class="text-brand-400 font-bold">·</span>
+                            <span>Administración de Microsoft 365, Azure AD y Active Directory en entorno corporativo.</span>
                         </li>
                         <li class="flex items-start gap-2.5">
-                            <i data-lucide="check" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
-                            <span>Soporte técnico a usuarios resolviendo incidencias y mejorando activamente los tiempos de respuesta.</span>
+                            <span class="text-brand-400 font-bold">·</span>
+                            <span>Soporte técnico a usuarios, resolviendo incidencias y mejorando tiempos de respuesta.</span>
                         </li>
                         <li class="flex items-start gap-2.5">
-                            <i data-lucide="check" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
-                            <span>Gestión de usuarios, permisos y control de accesos siguiendo el principio de mínimo privilegio.</span>
+                            <span class="text-brand-400 font-bold">·</span>
+                            <span>Gestión de usuarios, permisos y control de accesos.</span>
                         </li>
                         <li class="flex items-start gap-2.5">
-                            <i data-lucide="check" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
-                            <span>Participación en mejoras de infraestructura IT y procesos de digitalización de puestos de trabajo.</span>
+                            <span class="text-brand-400 font-bold">·</span>
+                            <span>Participación en mejoras de infraestructura IT y procesos de digitalización.</span>
                         </li>
                         <li class="flex items-start gap-2.5">
-                            <i data-lucide="check" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
-                            <span>Colaboración en tareas de ciberseguridad básica y protección perimetral de sistemas.</span>
+                            <span class="text-brand-400 font-bold">·</span>
+                            <span>Colaboración en tareas básicas de ciberseguridad y protección de sistemas.</span>
                         </li>
                     </ul>
                 </div>
 
-                <!-- Experiencia 2: Hospital Infanta Elena -->
-                <div class="p-6 sm:p-8 rounded-2xl bg-brand-card border border-brand-cardBorder relative">
+                <!-- Puesto 2: Hospital Infanta Elena -->
+                <div class="p-6 sm:p-8 rounded-2xl bg-brand-card border border-brand-cardBorder">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                         <div>
-                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Entorno Sanitario de Alta Disponibilidad</span>
-                            <h3 class="text-xl font-bold text-white">Estudiante en Prácticas, Técnico Informático</h3>
+                            <h3 class="text-xl font-bold text-white">Estudiante en Prácticas, Técnico Informatico</h3>
                             <div class="text-sm font-medium text-slate-300 flex items-center gap-2 mt-1">
                                 <span class="text-white font-semibold">Hospital Infanta Elena</span>
-                                <span>•</span>
+                                <span>|</span>
                                 <span class="text-slate-400">Huelva</span>
                             </div>
                         </div>
                         <span class="self-start sm:self-center text-xs font-semibold px-3 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700 code-font">
-                            Mar 2023 – Jun 2023
+                            Mar 2023 - Jun 2023
                         </span>
                     </div>
 
-                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+                    <ul class="space-y-2 text-sm text-slate-300">
                         <li class="flex items-start gap-2.5">
-                            <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                            <span>Soporte técnico integral en entorno sanitario crítico con altos estándares de exigencia y disponibilidad.</span>
+                            <span class="text-emerald-400 font-bold">·</span>
+                            <span>Soporte técnico en entorno sanitario (alta exigencia y disponibilidad).</span>
                         </li>
                         <li class="flex items-start gap-2.5">
-                            <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                            <span>Resolución y diagnóstico de incidencias en hardware, software departamental y conectividad de red local.</span>
+                            <span class="text-emerald-400 font-bold">·</span>
+                            <span>Resolución de incidencias de hardware, software y redes.</span>
                         </li>
                         <li class="flex items-start gap-2.5">
-                            <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                            <span>Instalación, despliegue y configuración de equipos informáticos en distintas unidades hospitalarias.</span>
+                            <span class="text-emerald-400 font-bold">·</span>
+                            <span>Instalación y configuración de equipos en distintos departamentos.</span>
                         </li>
                         <li class="flex items-start gap-2.5">
-                            <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                            <span>Soporte asistencial a personal sanitario y administrativo garantizando la continuidad del servicio ininterrumpido.</span>
+                            <span class="text-emerald-400 font-bold">·</span>
+                            <span>Soporte a sanitarios y administrativos, garantizando continuidad del servicio.</span>
                         </li>
                     </ul>
                 </div>
@@ -698,82 +368,90 @@
         </div>
     </section>
 
-    <!-- 6. FORMACIÓN ACADÉMICA -->
-    <section id="formacion" class="py-20 bg-slate-900/40 border-t border-b border-slate-800/60">
+    <!-- FORMACION -->
+    <section id="formacion" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-2xl mx-auto mb-16">
                 <div class="inline-flex items-center gap-2 text-brand-400 font-semibold text-sm mb-2">
                     <i data-lucide="graduation-cap" class="w-4 h-4"></i>
-                    <span>EDUCACIÓN & TITULACIONES</span>
+                    <span>FORMACIÓN</span>
                 </div>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                    Formación Académica Reglada
+                    Formación Académica y Certificaciones
                 </h2>
                 <p class="text-slate-400 text-sm mt-3">
-                    Itinerario formativo continuo especializado en sistemas, redes y ciberseguridad.
+                    Itinerario formativo reglado y acreditaciones.
                 </p>
             </div>
 
-            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 
-                <!-- Titulación 1: Especialización Ciberseguridad -->
-                <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder border-emerald-500/30 flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 code-font inline-block mb-3">
-                            Oct 2025 – Jun 2026
+                <!-- Formación 1 -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder border-emerald-500/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-lg font-bold text-white">Especialización en Ciberseguridad</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 code-font">
+                            Oct 2025 - Jun 2026
                         </span>
-                        <h3 class="text-base font-bold text-white mb-1">Especialización en Ciberseguridad</h3>
-                        <p class="text-xs font-semibold text-slate-300 mb-3">IES La Marisma • Huelva</p>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Curso de especialización en entornos de las tecnologías de la información: bastionado de redes, hacking ético, SIEM, análisis forense y respuesta a incidentes.
-                        </p>
                     </div>
+                    <p class="text-sm font-medium text-slate-300">IES La Marisma | Huelva</p>
                 </div>
 
-                <!-- Titulación 2: CFGS ASIR -->
-                <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder border-sky-500/30 flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20 code-font inline-block mb-3">
-                            Sep 2023 – Jun 2025
+                <!-- Formación 2 -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder border-sky-500/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-lg font-bold text-white">CFGS Administración de Sistemas Informáticos en Red</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20 code-font">
+                            Sep 2023 - Jun 2025
                         </span>
-                        <h3 class="text-base font-bold text-white mb-1">CFGS Administración de Sistemas Informáticos en Red</h3>
-                        <p class="text-xs font-semibold text-slate-300 mb-3">IES La Marisma • Huelva</p>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Gestión avanzada de Windows/Linux Server, servicios de red (DNS, DHCP, IIS/Apache), bases de datos relacionales, virtualización y seguridad perimetral.
-                        </p>
                     </div>
+                    <p class="text-sm font-medium text-slate-300">IES La Marisma | Huelva</p>
                 </div>
 
-                <!-- Titulación 3: CFGM SMR -->
-                <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder border-indigo-500/30 flex flex-col justify-between">
-                    <div>
-                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 code-font inline-block mb-3">
-                            Sep 2021 – Jun 2023
+                <!-- Formación 3 -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder border-indigo-500/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-lg font-bold text-white">CFGM Sistemas Microinformáticos en Red</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 code-font">
+                            Sep 2021 - Jun 2023
                         </span>
-                        <h3 class="text-base font-bold text-white mb-1">CFGM Sistemas Microinformáticos y Redes</h3>
-                        <p class="text-xs font-semibold text-slate-300 mb-3">IES La Marisma • Huelva</p>
-                        <p class="text-xs text-slate-400 leading-relaxed">
-                            Montaje y reparación de hardware, redes de área local, configuración de sistemas operativos cliente, software ofimático y soporte técnico a usuarios.
-                        </p>
                     </div>
+                    <p class="text-sm font-medium text-slate-300">IES La Marisma | Huelva</p>
+                </div>
+
+                <!-- Formación 4 / Idioma Trinity -->
+                <div class="p-6 rounded-2xl bg-brand-card border border-brand-cardBorder border-amber-500/30">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-lg font-bold text-white">Inglés B1 Trinity College London</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20 code-font">
+                            2021
+                        </span>
+                    </div>
+                    <p class="text-sm font-medium text-slate-300">Learning English School | San Juan del Puerto</p>
                 </div>
 
             </div>
 
-            <!-- Idiomas / Certificación adicional -->
-            <div class="max-w-4xl mx-auto mt-8 p-4 rounded-xl bg-slate-900 border border-slate-800 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-300">
-                <div class="flex items-center gap-3">
-                    <span class="p-2 rounded-lg bg-brand-500/10 text-brand-400">
-                        <i data-lucide="globe" class="w-4 h-4"></i>
-                    </span>
-                    <span><strong>Certificación de Idioma:</strong> Inglés B1 Trinity College London (Learning English School, San Juan del Puerto - 2021)</span>
+            <!-- IDIOMAS -->
+            <div class="max-w-4xl mx-auto p-6 rounded-2xl bg-slate-900 border border-slate-800">
+                <h3 class="text-xs font-bold uppercase text-brand-400 tracking-wider mb-4 flex items-center gap-2">
+                    <i data-lucide="languages" class="w-4 h-4"></i> IDIOMAS
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                    <div class="flex items-center justify-between p-3 rounded-xl bg-brand-card border border-slate-800">
+                        <span class="font-semibold text-white">Español</span>
+                        <span class="text-xs px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Nativo</span>
+                    </div>
+                    <div class="flex items-center justify-between p-3 rounded-xl bg-brand-card border border-slate-800">
+                        <span class="font-semibold text-white">Inglés</span>
+                        <span class="text-xs px-2.5 py-1 rounded bg-sky-500/10 text-sky-400 border border-sky-500/20">B1 (Trinity College London)</span>
+                    </div>
                 </div>
-                <span class="px-3 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">Español: Nativo</span>
             </div>
         </div>
     </section>
 
-    <!-- 7. CONTACTO & FOOTER -->
+    <!-- CONTACTO & FOOTER -->
     <section id="contacto" class="py-20 bg-slate-900/80 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-4xl mx-auto">
@@ -783,10 +461,10 @@
                         <span>CONTACTO DIRECTO</span>
                     </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                        ¿Hablamos sobre cómo puedo sumar a tu equipo?
+                        ¿Hablamos?
                     </h2>
                     <p class="text-slate-400 text-sm mt-3">
-                        Disponible para procesos de selección y posiciones de Junior SysAdmin, Operador SOC N1, Soporte IT o Técnico de Infraestructuras.
+                        Disponible para nuevas oportunidades laborales y entrevistas.
                     </p>
                 </div>
 
@@ -830,7 +508,7 @@
 
                 <!-- Footer final -->
                 <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-                    <p>© 2026 Abel Sánchez Ramos • Administrador de Sistemas Junior</p>
+                    <p>© 2026 Abel Sánchez Ramos • Administrador de Sistemas y Ciberseguridad Junior</p>
                     <p class="flex items-center gap-2">
                         <span>HTML5 & Tailwind CSS</span>
                         <span>•</span>
