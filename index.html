@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abel Sánchez | Systems Administrator & Cybersecurity Specialist</title>
+    <meta name="description" content="Portfolio profesional de Abel Sánchez Ramos - Administrador de Sistemas & Especialista en Ciberseguridad. Infraestructura segura, SIEM, virtualización y hardening.">
+    <meta name="author" content="Abel Sánchez Ramos">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#111827',
+                            900: '#0b0f19',
+                            950: '#070a12',
+                        },
+                        terminal: {
+                            green: '#10b981',
+                            cyan: '#06b6d4',
+                            glow: 'rgba(16, 185, 129, 0.15)'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::selection {
+            background-color: #10b981;
+            color: #070a12;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+        .code-block {
+            background: #070a12;
+            border-left: 3px solid #10b981;
+        }
+        details[open] summary .accordion-chevron {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+    <!-- Background Subtle Glow Effect -->
+    <div class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-emerald-500/10 via-cyan-500/5 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand / Terminal Identity -->
+            <a href="#hero" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 rounded bg-slate-800 border border-slate-700 flex items-center justify-center text-emerald-400 font-mono text-sm font-bold group-hover:border-emerald-500 transition-colors">
+                    <i class="fa-solid fa-terminal"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-white font-mono font-semibold text-sm tracking-tight group-hover:text-emerald-400 transition-colors">abel_sanchez:~$</span>
+                    <span class="text-xs text-slate-500 font-mono" data-i18n="nav_role">sysadmin_sec</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-6">
+                <a href="#about" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors" data-i18n="nav_about">Trayectoria</a>
+                <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors" data-i18n="nav_skills">Especialización</a>
+                <a href="#projects" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors" data-i18n="nav_projects">Proyectos & Labs</a>
+                <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-emerald-400 transition-colors" data-i18n="nav_contact">Contacto</a>
+            </div>
+
+            <!-- Language & External Links -->
+            <div class="flex items-center gap-3">
+                <!-- Lang Switcher -->
+                <button id="lang-toggle" onclick="toggleLanguage()" class="flex items-center gap-1.5 px-2.5 py-1 text-xs font-mono font-medium rounded border border-slate-700 bg-slate-800/80 text-emerald-400 hover:bg-slate-700 transition">
+                    <i class="fa-solid fa-globe text-slate-400"></i>
+                    <span id="current-lang">ES</span>
+                </button>
+
+                <!-- Social Links -->
+                <a href="https://linkedin.com/in/abelsanchez-it" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded border border-slate-700 bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition">
+                    <i class="fa-brands fa-linkedin-in text-sm"></i>
+                </a>
+                <a href="https://github.com/abelsnchzz" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded border border-slate-700 bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-500 transition">
+                    <i class="fa-brands fa-github text-sm"></i>
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden w-8 h-8 rounded border border-slate-700 bg-slate-800 flex items-center justify-center text-slate-300 hover:text-white">
+                    <i class="fa-solid fa-bars text-sm"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-900/95 px-4 py-3 space-y-2">
+            <a href="#about" class="block text-sm font-medium text-slate-300 hover:text-emerald-400 py-1" onclick="closeMobileMenu()" data-i18n="nav_about">Trayectoria</a>
+            <a href="#skills" class="block text-sm font-medium text-slate-300 hover:text-emerald-400 py-1" onclick="closeMobileMenu()" data-i18n="nav_skills">Especialización</a>
+            <a href="#projects" class="block text-sm font-medium text-slate-300 hover:text-emerald-400 py-1" onclick="closeMobileMenu()" data-i18n="nav_projects">Proyectos & Labs</a>
+            <a href="#contact" class="block text-sm font-medium text-slate-300 hover:text-emerald-400 py-1" onclick="closeMobileMenu()" data-i18n="nav_contact">Contacto</a>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span data-i18n="hero_badge">SISTEMAS RESILIENTES & AUDITORÍA DE SEGURIDAD</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Abel Sánchez Ramos
+                        <span class="block text-xl sm:text-2xl font-mono text-emerald-400 mt-2 font-normal" data-i18n="hero_subtitle">
+                            Administrador de Sistemas & Especialista en Ciberseguridad
+                        </span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl leading-relaxed" data-i18n="hero_desc">
+                        Enfocado en la administración de infraestructuras críticas, gestión de identidades híbridas (Active Directory / Entra ID) y defensa activa mediante SIEM (Wazuh/Splunk). Compromiso continuo con la disponibilidad, la resiliencia operativa y la reducción de superficie de ataque.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#projects" class="px-5 py-2.5 rounded-md bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-semibold text-sm transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span data-i18n="hero_cta_projects">Explorar Proyectos</span>
+                        </a>
+                        <a href="mailto:asannchez.2005@gmail.com" class="px-5 py-2.5 rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-sm transition-all flex items-center gap-2">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span data-i18n="hero_cta_contact">Contactar Directamente</span>
+                        </a>
+                        <a href="#about" class="px-4 py-2.5 rounded-md border border-slate-800 hover:border-slate-600 text-slate-400 hover:text-white font-medium text-sm transition-all flex items-center gap-2">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span data-i18n="hero_cta_cv">Ver Perfil ATS</span>
+                        </a>
+                    </div>
+
+                    <!-- Quick Metrics / Highlights -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800 font-mono text-xs">
+                        <div>
+                            <span class="block text-emerald-400 font-bold text-lg">100%</span>
+                            <span class="text-slate-500" data-i18n="metric_1">Hardening Linux/Win</span>
+                        </div>
+                        <div>
+                            <span class="block text-cyan-400 font-bold text-lg">SIEM</span>
+                            <span class="text-slate-500" data-i18n="metric_2">Wazuh & Splunk Ops</span>
+                        </div>
+                        <div>
+                            <span class="block text-purple-400 font-bold text-lg">Hybrid</span>
+                            <span class="text-slate-500" data-i18n="metric_3">AD & Entra ID Cloud</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Terminal Card -->
+                <div class="lg:col-span-5">
+                    <div class="rounded-lg border border-slate-800 bg-slate-950 shadow-2xl overflow-hidden font-mono text-xs">
+                        <!-- Terminal Header -->
+                        <div class="bg-slate-850 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                            </div>
+                            <span class="text-slate-500 font-medium">bash — status-check.sh</span>
+                            <span class="text-slate-600">v2.4</span>
+                        </div>
+                        <!-- Terminal Body -->
+                        <div class="p-5 space-y-3 text-slate-300">
+                            <div>
+                                <span class="text-emerald-400">abel@infra-lab</span>:<span class="text-cyan-400">~</span>$ neofetch --profile
+                            </div>
+                            <div class="text-slate-400 space-y-1">
+                                <p><span class="text-emerald-400">OS:</span> Kali Linux / Debian 12 / Windows Server 2022</p>
+                                <p><span class="text-emerald-400">Hypervisor:</span> Proxmox VE 8.x / VMware ESXi</p>
+                                <p><span class="text-emerald-400">Identity:</span> AD DS + Microsoft Entra ID Sync</p>
+                                <p><span class="text-emerald-400">Defensive:</span> Wazuh Manager + Suricata IDS + EDR</p>
+                                <p><span class="text-emerald-400">Status:</span> <span class="text-emerald-400 bg-emerald-950 px-1.5 py-0.5 rounded">ONLINE / READY FOR OPPORTUNITIES</span></p>
+                            </div>
+                            <div class="pt-2 border-t border-slate-900">
+                                <span class="text-emerald-400">abel@infra-lab</span>:<span class="text-cyan-400">~</span>$ <span class="animate-pulse">_</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Summary & Background -->
+        <section id="about" class="py-16 bg-slate-950/60 border-y border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-12">
+                    <h2 class="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-2" data-i18n="about_pretitle">// FORMACIÓN & TRAYECTORIA CORPORATIVA</h2>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight" data-i18n="about_title">Capacitación Técnica y Experiencia en Producción</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Experience -->
+                    <div class="space-y-6">
+                        <h4 class="text-sm font-mono text-slate-400 uppercase tracking-wide flex items-center gap-2">
+                            <i class="fa-solid fa-briefcase text-emerald-400"></i>
+                            <span data-i18n="about_exp_title">Experiencia Práctica</span>
+                        </h4>
+
+                        <!-- Geotexan -->
+                        <div class="p-5 rounded-lg border border-slate-800 bg-slate-900/90 relative pl-6 border-l-2 border-l-emerald-500">
+                            <div class="flex justify-between items-start mb-2">
+                                <h5 class="text-white font-semibold text-base" data-i18n="exp_geo_role">SysAdmin IT (Prácticas)</h5>
+                                <span class="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">03/2025 – 06/2025</span>
+                            </div>
+                            <p class="text-xs font-mono text-emerald-400 mb-2">Geotexan S.A. (Huelva)</p>
+                            <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
+                                <li data-i18n="exp_geo_1">Administración de Active Directory, Azure AD / Entra ID y Microsoft 365 corporativo.</li>
+                                <li data-i18n="exp_geo_2">Gestión de identidades, jerarquías de directivas de grupo (GPO), permisos y control de accesos.</li>
+                                <li data-i18n="exp_geo_3">Mantenimiento preventivo y aplicación de medidas de hardening en parque de puestos de trabajo.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Hospital Infanta Elena -->
+                        <div class="p-5 rounded-lg border border-slate-800 bg-slate-900/90 relative pl-6 border-l-2 border-l-cyan-500">
+                            <div class="flex justify-between items-start mb-2">
+                                <h5 class="text-white font-semibold text-base" data-i18n="exp_hosp_role">Técnico Informático (Prácticas)</h5>
+                                <span class="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">03/2023 – 06/2023</span>
+                            </div>
+                            <p class="text-xs font-mono text-cyan-400 mb-2">Hospital Infanta Elena (Entorno Sanitario Crítico)</p>
+                            <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
+                                <li data-i18n="exp_hosp_1">Resolución de incidencias críticas en infraestructura de red, hardware y microinformática.</li>
+                                <li data-i18n="exp_hosp_2">Despliegue y configuración de equipamiento médico-administrativo con estricta disponibilidad.</li>
+                                <li data-i18n="exp_hosp_3">Soporte técnico de nivel 1 y 2 bajo Acuerdos de Nivel de Servicio (SLA) hospitalarios.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Education & Certifications -->
+                    <div class="space-y-6">
+                        <h4 class="text-sm font-mono text-slate-400 uppercase tracking-wide flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-cyan-400"></i>
+                            <span data-i18n="about_edu_title">Formación Oficial Homologada</span>
+                        </h4>
+
+                        <div class="p-5 rounded-lg border border-slate-800 bg-slate-900/90 space-y-4">
+                            <div>
+                                <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 border border-emerald-800/40 px-2 py-0.5 rounded">Especialización Postgrado</span>
+                                <h5 class="text-white font-semibold text-sm mt-1" data-i18n="edu_1_title">Curso de Especialización en Ciberseguridad en Entornos de las TI</h5>
+                                <p class="text-xs text-slate-400 font-mono">IES La Marisma · 2025 - 2026</p>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-xs font-mono text-cyan-400 bg-cyan-950/60 border border-cyan-800/40 px-2 py-0.5 rounded">Ciclo Formativo Grado Superior</span>
+                                <h5 class="text-white font-semibold text-sm mt-1" data-i18n="edu_2_title">CFGS Administración de Sistemas Informáticos en Red (ASIR)</h5>
+                                <p class="text-xs text-slate-400 font-mono">IES La Marisma · 2023 - 2025</p>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3">
+                                <span class="text-xs font-mono text-slate-400 bg-slate-800 px-2 py-0.5 rounded">Ciclo Formativo Grado Medio</span>
+                                <h5 class="text-white font-semibold text-sm mt-1" data-i18n="edu_3_title">CFGM Sistemas Microinformáticos y Redes (SMR)</h5>
+                                <p class="text-xs text-slate-400 font-mono">IES La Marisma · 2021 - 2023</p>
+                            </div>
+
+                            <div class="border-t border-slate-800 pt-3 flex items-center justify-between text-xs font-mono">
+                                <span class="text-slate-400"><i class="fa-solid fa-language text-emerald-400 mr-1"></i> Idiomas:</span>
+                                <span class="text-white">Español (Nativo) · Inglés (B1 Trinity College London)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Stack / Competencies -->
+        <section id="skills" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mb-14">
+                <h2 class="text-xs font-mono text-emerald-400 uppercase tracking-wider mb-2" data-i18n="skills_pretitle">// CAPACIDADES Y MATRIZ TÉCNICA</h2>
+                <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight" data-i18n="skills_title">Áreas de Especialización y Herramientas</h3>
+                <p class="text-slate-400 text-sm mt-2" data-i18n="skills_desc">Stack estructurado para garantizar la resiliencia operativa y la seguridad en profundidad.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Stack 1: Systems & Virtualization -->
+                <div class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-lg p-6 flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="w-10 h-10 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-server text-lg"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-white mb-2" data-i18n="skill_cat1_title">Sistemas & Virtualización</h4>
+                        <p class="text-xs text-slate-400 mb-4" data-i18n="skill_cat1_desc">Gestión y despliegue de infraestructuras corporativas on-premise y virtualizadas.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">Windows Server 2022</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">Linux (Debian/Kali/RHEL)</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">Active Directory (AD DS)</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">Microsoft Entra ID</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">Proxmox VE</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">VMware ESXi</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">DNS / DHCP / VLANs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stack 2: Cybersecurity & Monitoring -->
+                <div class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-lg p-6 flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="w-10 h-10 rounded bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-shield-virus text-lg"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-white mb-2" data-i18n="skill_cat2_title">Ciberseguridad & SOC</h4>
+                        <p class="text-xs text-slate-400 mb-4" data-i18n="skill_cat2_desc">Monitorización continua de telemetría, mitigación de vectores de ataque y hardening.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-cyan-300">Wazuh SIEM/XDR</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-cyan-300">Splunk Enterprise</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">System Hardening (CIS)</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">Nmap & Packet Analysis</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">Firewalls (iptables/pfSense)</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">Gestión de Vulnerabilidades</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stack 3: Automation & Cloud/Containers -->
+                <div class="bg-slate-950 border border-slate-800 hover:border-slate-700 rounded-lg p-6 flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="w-10 h-10 rounded bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center mb-4">
+                            <i class="fa-solid fa-code text-lg"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold text-white mb-2" data-i18n="skill_cat3_title">Automatización & Contenedores</h4>
+                        <p class="text-xs text-slate-400 mb-4" data-i18n="skill_cat3_desc">Optimización de tareas de mantenimiento, orquestación ligera y scripting administrativo.</p>
+                        
+                        <div class="flex flex-wrap gap-1.5 font-mono text-xs">
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-purple-300">Bash Scripting</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-purple-300">PowerShell Core</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">Docker & Compose</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">M365 Admin Center</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">Automated Backup Pipelines</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-slate-300">Git / GitHub Actions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects / HomeLab (Dual RRHH & Technical Audience) -->
+        <section id="projects" class="py-20 bg-slate-950/60 border-t border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-14">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono mb-3">
+                        <i class="fa-solid fa-microchip"></i>
+                        <span data-i18n="proj_badge">HOMELAB & ARQUITECTURA DE PRUEBAS</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight" data-i18n="proj_title">Casos Prácticos e Infraestructuras Desplegadas</h2>
+                    <p class="text-slate-400 text-sm mt-2" data-i18n="proj_desc">
+                        Cada proyecto cuenta con una vista ejecutiva orientada a RRHH y un panel técnico desplegable con arquitectura y resolución de problemas.
+                    </p>
+                </div>
+
+                <div class="space-y-10">
+                    <!-- Project 1: Hybrid Identity & AD Hardening -->
+                    <article class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-xl">
+                        <div class="p-6 sm:p-8">
+                            <!-- Executive / HR View -->
+                            <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                                    <span class="text-xs font-mono uppercase text-emerald-400 font-semibold" data-i18n="proj1_tag">Identidad & Directorio Activo</span>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">Windows Server 2022</span>
+                                    <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">Entra ID Connect</span>
+                                    <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">GPO Hardening</span>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3" data-i18n="proj1_title">Laboratorio de Identidad Híbrida Corporativa y Hardening de Active Directory</h3>
+                            
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6" data-i18n="proj1_exec_desc">
+                                <strong>Resumen Ejecutivo:</strong> Implementación de una infraestructura de dominio empresarial con réplica y sincronización hacia Microsoft Entra ID (Azure AD). Se estructuraron Unidades Organizativas bajo el principio de menor privilegio (PoLP), asignación de directivas de grupo para mitigación de movimientos laterales y políticas de contraseñas robustas.
+                            </p>
+
+                            <!-- Executive Results / Metrics Badges -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 bg-slate-950/80 p-4 rounded-lg border border-slate-800/80 font-mono text-xs">
+                                <div>
+                                    <span class="text-slate-500 block" data-i18n="proj1_m1_l">Arquitectura:</span>
+                                    <span class="text-white font-medium" data-i18n="proj1_m1_v">Bosque AD DS + Sync Cloud</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block" data-i18n="proj1_m2_l">Políticas Aplicadas:</span>
+                                    <span class="text-emerald-400 font-medium" data-i18n="proj1_m2_v">+35 GPOs de Seguridad CIS</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block" data-i18n="proj1_m3_l">Gobernanza:</span>
+                                    <span class="text-cyan-400 font-medium" data-i18n="proj1_m3_v">RBAC y Control de Acceso</span>
+                                </div>
+                            </div>
+
+                            <!-- Technical Deep Dive Accordion (SysAdmins / Leads) -->
+                            <details class="group border border-slate-800 rounded-lg bg-slate-950/50">
+                                <summary class="px-4 py-3 flex items-center justify-between cursor-pointer text-xs font-mono font-medium text-emerald-400 hover:text-emerald-300 transition-colors">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fa-solid fa-terminal"></i>
+                                        <span data-i18n="accordion_tech_btn">Ver Detalles de Ingeniería y Troubleshooting Técnico</span>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-down accordion-chevron transition-transform duration-200"></i>
+                                </summary>
+                                <div class="p-5 border-t border-slate-800 space-y-4 text-xs font-mono text-slate-300">
+                                    <div>
+                                        <h5 class="text-white font-bold mb-1 uppercase text-xs" data-i18n="proj1_tech_h1">1. Topología y Desafío de Red</h5>
+                                        <p class="text-slate-400 leading-relaxed" data-i18n="proj1_tech_p1">
+                                            Se desplegaron 2 Domain Controllers (DC01 primario y DC02 en réplica) en subredes aisladas. Se solventaron problemas de resolución DNS inversa y sincronización de catálogos globales tras la replicación forzada con ntdsutil y repadmin.
+                                        </p>
+                                    </div>
+                                    <div class="code-block p-3 rounded">
+                                        <span class="text-slate-500"># Verificación de integridad de replicación y KDC</span><br>
+                                        <span class="text-emerald-400">repadmin</span> /showrepl * /csv > repl_status.csv<br>
+                                        <span class="text-emerald-400">dcdiag</span> /v /c /d /e /test:sysvolcheck
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-bold mb-1 uppercase text-xs" data-i18n="proj1_tech_h2">2. Hardening Aplicado</h5>
+                                        <p class="text-slate-400 leading-relaxed" data-i18n="proj1_tech_p2">
+                                            Deshabilitación completa de protocolos obsoletos NTLMv1 y SMBv1 mediante directivas centrales. Restricción de permisos sobre el atributo AdminSDHolder y segmentación de cuentas administrativas mediante modelo de Tiering (Tier 0 para DCs, Tier 1 para servidores de aplicación, Tier 2 para endpoints).
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 flex items-center gap-4">
+                                        <a href="https://github.com/abelsnchzz" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:underline flex items-center gap-1">
+                                            <i class="fa-brands fa-github"></i> <span data-i18n="proj_view_repo">Repositorio / Write-up en GitHub</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: SIEM/EDR & Incident Detection -->
+                    <article class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-xl">
+                        <div class="p-6 sm:p-8">
+                            <!-- Executive / HR View -->
+                            <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                                    <span class="text-xs font-mono uppercase text-cyan-400 font-semibold" data-i18n="proj2_tag">Detección de Incidentes & SOC</span>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">Wazuh Manager</span>
+                                    <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">Splunk SIEM</span>
+                                    <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">Sysmon</span>
+                                    <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">MITRE ATT&CK</span>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3" data-i18n="proj2_title">Despliegue de Plataforma SIEM/EDR y Análisis de Telemetría con Wazuh y Splunk</h3>
+                            
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6" data-i18n="proj2_exec_desc">
+                                <strong>Resumen Ejecutivo:</strong> Montaje de un ecosistema de monitorización de eventos de seguridad (SOC) centralizando logs de servidores Linux y estaciones Windows. Configuración de reglas personalizadas para detección temprana de ataques de fuerza bruta, ejecución sospechosa de procesos y cambios no autorizados en archivos críticos.
+                            </p>
+
+                            <!-- Executive Results / Metrics Badges -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 bg-slate-950/80 p-4 rounded-lg border border-slate-800/80 font-mono text-xs">
+                                <div>
+                                    <span class="text-slate-500 block" data-i18n="proj2_m1_l">Ingesta de Eventos:</span>
+                                    <span class="text-white font-medium" data-i18n="proj2_m1_v">WinEventLog + Sysmon + Auditd</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block" data-i18n="proj2_m2_l">Tiempo de Detección:</span>
+                                    <span class="text-emerald-400 font-medium" data-i18n="proj2_m2_v">&lt; 3 Segundos (Alertas en vivo)</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block" data-i18n="proj2_m3_l">Mapeo Defensivo:</span>
+                                    <span class="text-cyan-400 font-medium" data-i18n="proj2_m3_v">Tácticas MITRE ATT&CK</span>
+                                </div>
+                            </div>
+
+                            <!-- Technical Deep Dive Accordion (SysAdmins / Leads) -->
+                            <details class="group border border-slate-800 rounded-lg bg-slate-950/50">
+                                <summary class="px-4 py-3 flex items-center justify-between cursor-pointer text-xs font-mono font-medium text-cyan-400 hover:text-cyan-300 transition-colors">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fa-solid fa-terminal"></i>
+                                        <span data-i18n="accordion_tech_btn">Ver Detalles de Ingeniería y Troubleshooting Técnico</span>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-down accordion-chevron transition-transform duration-200"></i>
+                                </summary>
+                                <div class="p-5 border-t border-slate-800 space-y-4 text-xs font-mono text-slate-300">
+                                    <div>
+                                        <h5 class="text-white font-bold mb-1 uppercase text-xs" data-i18n="proj2_tech_h1">1. Canalización de Registros y Sysmon</h5>
+                                        <p class="text-slate-400 leading-relaxed" data-i18n="proj2_tech_p1">
+                                            Instalación de agentes Wazuh coordinados con SwiftOnSecurity Sysmon config en Windows para capturar creación de procesos anómalos (EventID 1) y conexiones de red no estándar (EventID 3). Los logs se enviaron mediante forwarders seguros SSL/TLS al clúster de indexación.
+                                        </p>
+                                    </div>
+                                    <div class="code-block p-3 rounded">
+                                        <span class="text-slate-500">&lt;!-- Wazuh Localfile XML Config Snippet --&gt;</span><br>
+                                        &lt;<span class="text-cyan-400">localfile</span>&gt;<br>
+                                        &nbsp;&nbsp;&lt;<span class="text-cyan-400">location</span>&gt;Microsoft-Windows-Sysmon/Operational&lt;/<span class="text-cyan-400">location</span>&gt;<br>
+                                        &nbsp;&nbsp;&lt;<span class="text-cyan-400">log_format</span>&gt;eventchannel&lt;/<span class="text-cyan-400">log_format</span>&gt;<br>
+                                        &lt;/<span class="text-cyan-400">localfile</span>&gt;
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-bold mb-1 uppercase text-xs" data-i18n="proj2_tech_h2">2. Simulación de Amenazas y Verificación</h5>
+                                        <p class="text-slate-400 leading-relaxed" data-i18n="proj2_tech_p2">
+                                            Se ejecutaron simulaciones controladas de spraying de contraseñas y evasión mediante PowerShell ofuscado. El SIEM generó la alerta correlacionada correspondiente y ejecutó un script de respuesta activa (Active Response) aislando la IP origen en el firewall del host.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 flex items-center gap-4">
+                                        <a href="https://github.com/abelsnchzz" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline flex items-center gap-1">
+                                            <i class="fa-brands fa-github"></i> <span data-i18n="proj_view_repo">Repositorio / Write-up en GitHub</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Virtualized Homelab & Hardened Docker Services -->
+                    <article class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-xl">
+                        <div class="p-6 sm:p-8">
+                            <!-- Executive / HR View -->
+                            <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span>
+                                    <span class="text-xs font-mono uppercase text-purple-400 font-semibold" data-i18n="proj3_tag">Virtualización & Resiliencia</span>
+                                </div>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">Proxmox VE</span>
+                                    <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">Docker Compose</span>
+                                    <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">Linux Hardening</span>
+                                    <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-800 text-slate-300 border border-slate-700">Nginx Proxy</span>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl sm:text-2xl font-bold text-white mb-3" data-i18n="proj3_title">Infraestructura de Servidores Proxmox VE con Contenedores Docker Seguros</h3>
+                            
+                            <p class="text-slate-300 text-sm leading-relaxed mb-6" data-i18n="proj3_exec_desc">
+                                <strong>Resumen Ejecutivo:</strong> Despliegue de un laboratorio físico/virtualizado de alta disponibilidad bajo Proxmox VE. Segmentación de servicios corporativos mediante contenedores LXC y Docker, aplicando políticas de contención sin privilegios (rootless), copias de seguridad incrementales automatizadas y proxy inverso con certificados SSL.
+                            </p>
+
+                            <!-- Executive Results / Metrics Badges -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 bg-slate-950/80 p-4 rounded-lg border border-slate-800/80 font-mono text-xs">
+                                <div>
+                                    <span class="text-slate-500 block" data-i18n="proj3_m1_l">Disponibilidad:</span>
+                                    <span class="text-white font-medium" data-i18n="proj3_m1_v">Backups Diarios Cifrados</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block" data-i18n="proj3_m2_l">Aislamiento:</span>
+                                    <span class="text-emerald-400 font-medium" data-i18n="proj3_m2_v">Contenedores Unprivileged (LXC)</span>
+                                </div>
+                                <div>
+                                    <span class="text-slate-500 block" data-i18n="proj3_m3_l">Seguridad Web:</span>
+                                    <span class="text-purple-400 font-medium" data-i18n="proj3_m3_v">Reverse Proxy + SSL TLS 1.3</span>
+                                </div>
+                            </div>
+
+                            <!-- Technical Deep Dive Accordion (SysAdmins / Leads) -->
+                            <details class="group border border-slate-800 rounded-lg bg-slate-950/50">
+                                <summary class="px-4 py-3 flex items-center justify-between cursor-pointer text-xs font-mono font-medium text-purple-400 hover:text-purple-300 transition-colors">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fa-solid fa-terminal"></i>
+                                        <span data-i18n="accordion_tech_btn">Ver Detalles de Ingeniería y Troubleshooting Técnico</span>
+                                    </span>
+                                    <i class="fa-solid fa-chevron-down accordion-chevron transition-transform duration-200"></i>
+                                </summary>
+                                <div class="p-5 border-t border-slate-800 space-y-4 text-xs font-mono text-slate-300">
+                                    <div>
+                                        <h5 class="text-white font-bold mb-1 uppercase text-xs" data-i18n="proj3_tech_h1">1. Red Privada Virtualizada y Bridging</h5>
+                                        <p class="text-slate-400 leading-relaxed" data-i18n="proj3_tech_p1">
+                                            Configuración de bridges internos en Proxmox (vmbr0, vmbr1) separando la red de administración de la red DMZ. Creación de reglas estrictas en el firewall del hipervisor para rechazar tráfico ICMP no deseado y bloquear intentos de conexión SSH repetidos vía fail2ban.
+                                        </p>
+                                    </div>
+                                    <div class="code-block p-3 rounded">
+                                        <span class="text-slate-500"># Docker Hardening: Restricción de capacidades de kernel</span><br>
+                                        security_opt:<br>
+                                        &nbsp;&nbsp;- no-new-privileges:true<br>
+                                        cap_drop:<br>
+                                        &nbsp;&nbsp;- ALL<br>
+                                        read_only: true
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-bold mb-1 uppercase text-xs" data-i18n="proj3_tech_h2">2. Recuperación ante Desastres (DRP)</h5>
+                                        <p class="text-slate-400 leading-relaxed" data-i18n="proj3_tech_p2">
+                                            Scripting en Bash con rsync y cron jobs para volcado automatizado de snapshots a almacenamiento externo cifrado NFS, probando periódicamente tiempos de recuperación de servicio (RTO) inferiores a 15 minutos.
+                                        </p>
+                                    </div>
+                                    <div class="pt-2 flex items-center gap-4">
+                                        <a href="https://github.com/abelsnchzz" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:underline flex items-center gap-1">
+                                            <i class="fa-brands fa-github"></i> <span data-i18n="proj_view_repo">Repositorio / Write-up en GitHub</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-2xl border border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950 p-8 sm:p-12 text-center max-w-3xl mx-auto">
+                <div class="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-regular fa-paper-plane text-lg"></i>
+                </div>
+
+                <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3" data-i18n="contact_title">¿Interesado en reforzar su equipo técnico?</h2>
+                <p class="text-slate-400 text-sm max-w-lg mx-auto mb-8" data-i18n="contact_desc">
+                    Disponible para posiciones de Administrador de Sistemas Junior, Técnico de Ciberseguridad / SOC Tier 1 y Soporte de Infraestructuras.
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-4 font-mono text-xs">
+                    <a href="mailto:asannchez.2005@gmail.com" class="px-5 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold transition flex items-center gap-2">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>asannchez.2005@gmail.com</span>
+                    </a>
+                    <a href="https://linkedin.com/in/abelsanchez-it" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition flex items-center gap-2">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-800/80 text-xs text-slate-500 font-mono flex items-center justify-center gap-6">
+                    <span><i class="fa-solid fa-location-dot text-emerald-400 mr-1"></i> Huelva, España</span>
+                    <span><i class="fa-solid fa-id-card text-cyan-400 mr-1"></i> Garantía Juvenil</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+            <div>
+                <span>© <span id="year"></span> Abel Sánchez Ramos.</span>
+                <span data-i18n="footer_rights">Todos los derechos reservados.</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    <span data-i18n="footer_status">Ready to Deploy</span>
+                </span>
+                <span>•</span>
+                <a href="#hero" class="text-slate-400 hover:text-emerald-400 transition" data-i18n="footer_top">Volver Arriba ↑</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Multilingual Dictionary & Core Script -->
+    <script>
+        // Set dynamic current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // i18n Translations Dictionary
+        const translations = {
+            es: {
+                nav_role: "sysadmin_sec",
+                nav_about: "Trayectoria",
+                nav_skills: "Especialización",
+                nav_projects: "Proyectos & Labs",
+                nav_contact: "Contacto",
+
+                hero_badge: "SISTEMAS RESILIENTES & AUDITORÍA DE SEGURIDAD",
+                hero_subtitle: "Administrador de Sistemas & Especialista en Ciberseguridad",
+                hero_desc: "Enfocado en la administración de infraestructuras críticas, gestión de identidades híbridas (Active Directory / Entra ID) y defensa activa mediante SIEM (Wazuh/Splunk). Compromiso continuo con la disponibilidad, la resiliencia operativa y la reducción de superficie de ataque.",
+                hero_cta_projects: "Explorar Proyectos",
+                hero_cta_contact: "Contactar Directamente",
+                hero_cta_cv: "Ver Perfil ATS",
+
+                metric_1: "Hardening Linux/Win",
+                metric_2: "Wazuh & Splunk Ops",
+                metric_3: "AD & Entra ID Cloud",
+
+                about_pretitle: "// FORMACIÓN & TRAYECTORIA CORPORATIVA",
+                about_title: "Capacitación Técnica y Experiencia en Producción",
+                about_exp_title: "Experiencia Práctica",
+                exp_geo_role: "SysAdmin IT (Prácticas)",
+                exp_geo_1: "Administración de Active Directory, Azure AD / Entra ID y Microsoft 365 corporativo.",
+                exp_geo_2: "Gestión de identidades, jerarquías de directivas de grupo (GPO), permisos y control de accesos.",
+                exp_geo_3: "Mantenimiento preventivo y aplicación de medidas de hardening en parque de puestos de trabajo.",
+                exp_hosp_role: "Técnico Informático (Prácticas)",
+                exp_hosp_1: "Resolución de incidencias críticas en infraestructura de red, hardware y microinformática.",
+                exp_hosp_2: "Despliegue y configuración de equipamiento médico-administrativo con estricta disponibilidad.",
+                exp_hosp_3: "Soporte técnico de nivel 1 y 2 bajo Acuerdos de Nivel de Servicio (SLA) hospitalarios.",
+
+                about_edu_title: "Formación Oficial Homologada",
+                edu_1_title: "Curso de Especialización en Ciberseguridad en Entornos de las TI",
+                edu_2_title: "CFGS Administración de Sistemas Informáticos en Red (ASIR)",
+                edu_3_title: "CFGM Sistemas Microinformáticos y Redes (SMR)",
+
+                skills_pretitle: "// CAPACIDADES Y MATRIZ TÉCNICA",
+                skills_title: "Áreas de Especialización y Herramientas",
+                skills_desc: "Stack estructurado para garantizar la resiliencia operativa y la seguridad en profundidad.",
+                skill_cat1_title: "Sistemas & Virtualización",
+                skill_cat1_desc: "Gestión y despliegue de infraestructuras corporativas on-premise y virtualizadas.",
+                skill_cat2_title: "Ciberseguridad & SOC",
+                skill_cat2_desc: "Monitorización continua de telemetría, mitigación de vectores de ataque y hardening.",
+                skill_cat3_title: "Automatización & Contenedores",
+                skill_cat3_desc: "Optimización de tareas de mantenimiento, orquestación ligera y scripting administrativo.",
+
+                proj_badge: "HOMELAB & ARQUITECTURA DE PRUEBAS",
+                proj_title: "Casos Prácticos e Infraestructuras Desplegadas",
+                proj_desc: "Cada proyecto cuenta con una vista ejecutiva orientada a RRHH y un panel técnico desplegable con arquitectura y resolución de problemas.",
+                accordion_tech_btn: "Ver Detalles de Ingeniería y Troubleshooting Técnico",
+                proj_view_repo: "Repositorio / Write-up en GitHub",
+
+                proj1_tag: "Identidad & Directorio Activo",
+                proj1_title: "Laboratorio de Identidad Híbrida Corporativa y Hardening de Active Directory",
+                proj1_exec_desc: "Resumen Ejecutivo: Implementación de una infraestructura de dominio empresarial con réplica y sincronización hacia Microsoft Entra ID (Azure AD). Se estructuraron Unidades Organizativas bajo el principio de menor privilegio (PoLP), asignación de directivas de grupo para mitigación de movimientos laterales y políticas de contraseñas robustas.",
+                proj1_m1_l: "Arquitectura:",
+                proj1_m1_v: "Bosque AD DS + Sync Cloud",
+                proj1_m2_l: "Políticas Aplicadas:",
+                proj1_m2_v: "+35 GPOs de Seguridad CIS",
+                proj1_m3_l: "Gobernanza:",
+                proj1_m3_v: "RBAC y Control de Acceso",
+                proj1_tech_h1: "1. Topología y Desafío de Red",
+                proj1_tech_p1: "Se desplegaron 2 Domain Controllers (DC01 primario y DC02 en réplica) en subredes aisladas. Se solventaron problemas de resolución DNS inversa y sincronización de catálogos globales tras la replicación forzada con ntdsutil y repadmin.",
+                proj1_tech_h2: "2. Hardening Aplicado",
+                proj1_tech_p2: "Deshabilitación completa de protocolos obsoletos NTLMv1 y SMBv1 mediante directivas centrales. Restricción de permisos sobre el atributo AdminSDHolder y segmentación de cuentas administrativas mediante modelo de Tiering (Tier 0 para DCs, Tier 1 para servidores de aplicación, Tier 2 para endpoints).",
+
+                proj2_tag: "Detección de Incidentes & SOC",
+                proj2_title: "Despliegue de Plataforma SIEM/EDR y Análisis de Telemetría con Wazuh y Splunk",
+                proj2_exec_desc: "Resumen Ejecutivo: Montaje de un ecosistema de monitorización de eventos de seguridad (SOC) centralizando logs de servidores Linux y estaciones Windows. Configuración de reglas personalizadas para detección temprana de ataques de fuerza bruta, ejecución sospechosa de procesos y cambios no autorizados en archivos críticos.",
+                proj2_m1_l: "Ingesta de Eventos:",
+                proj2_m1_v: "WinEventLog + Sysmon + Auditd",
+                proj2_m2_l: "Tiempo de Detección:",
+                proj2_m2_v: "< 3 Segundos (Alertas en vivo)",
+                proj2_m3_l: "Mapeo Defensivo:",
+                proj2_m3_v: "Tácticas MITRE ATT&CK",
+                proj2_tech_h1: "1. Canalización de Registros y Sysmon",
+                proj2_tech_p1: "Instalación de agentes Wazuh coordinados con SwiftOnSecurity Sysmon config en Windows para capturar creación de procesos anómalos (EventID 1) y conexiones de red no estándar (EventID 3). Los logs se enviaron mediante forwarders seguros SSL/TLS al clúster de indexación.",
+                proj2_tech_h2: "2. Simulación de Amenazas y Verificación",
+                proj2_tech_p2: "Se ejecutaron simulaciones controladas de spraying de contraseñas y evasión mediante PowerShell ofuscado. El SIEM generó la alerta correlacionada correspondiente y ejecutó un script de respuesta activa (Active Response) aislando la IP origen en el firewall del host.",
+
+                proj3_tag: "Virtualización & Resiliencia",
+                proj3_title: "Infraestructura de Servidores Proxmox VE con Contenedores Docker Seguros",
+                proj3_exec_desc: "Resumen Ejecutivo: Despliegue de un laboratorio físico/virtualizado de alta disponibilidad bajo Proxmox VE. Segmentación de servicios corporativos mediante contenedores LXC y Docker, aplicando políticas de contención sin privilegios (rootless), copias de seguridad incrementales automatizadas y proxy inverso con certificados SSL.",
+                proj3_m1_l: "Disponibilidad:",
+                proj3_m1_v: "Backups Diarios Cifrados",
+                proj3_m2_l: "Aislamiento:",
+                proj3_m2_v: "Contenedores Unprivileged (LXC)",
+                proj3_m3_l: "Seguridad Web:",
+                proj3_m3_v: "Reverse Proxy + SSL TLS 1.3",
+                proj3_tech_h1: "1. Red Privada Virtualizada y Bridging",
+                proj3_tech_p1: "Configuración de bridges internos en Proxmox (vmbr0, vmbr1) separando la red de administración de la red DMZ. Creación de reglas estrictas en el firewall del hipervisor para rechazar tráfico ICMP no deseado y bloquear intentos de conexión SSH repetidos vía fail2ban.",
+                proj3_tech_h2: "2. Recuperación ante Desastres (DRP)",
+                proj3_tech_p2: "Scripting en Bash con rsync y cron jobs para volcado automatizado de snapshots a almacenamiento externo cifrado NFS, probando periódicamente tiempos de recuperación de servicio (RTO) inferiores a 15 minutos.",
+
+                contact_title: "¿Interesado en reforzar su equipo técnico?",
+                contact_desc: "Disponible para posiciones de Administrador de Sistemas Junior, Técnico de Ciberseguridad / SOC Tier 1 y Soporte de Infraestructuras.",
+                footer_rights: "Todos los derechos reservados.",
+                footer_status: "Listo para Despliegue",
+                footer_top: "Volver Arriba ↑"
+            },
+            en: {
+                nav_role: "sysadmin_sec",
+                nav_about: "Background",
+                nav_skills: "Expertise",
+                nav_projects: "Projects & Labs",
+                nav_contact: "Contact",
+
+                hero_badge: "RESILIENT SYSTEMS & SECURITY AUDITING",
+                hero_subtitle: "Systems Administrator & Cybersecurity Specialist",
+                hero_desc: "Focused on critical infrastructure administration, hybrid identity management (Active Directory / Entra ID), and active defense through SIEM (Wazuh/Splunk). Deeply committed to high availability, operational resilience, and reducing attack surfaces.",
+                hero_cta_projects: "Explore Projects",
+                hero_cta_contact: "Direct Contact",
+                hero_cta_cv: "View ATS Profile",
+
+                metric_1: "Linux/Win Hardening",
+                metric_2: "Wazuh & Splunk Ops",
+                metric_3: "Hybrid AD & Cloud",
+
+                about_pretitle: "// EDUCATION & CORPORATE TRACK RECORD",
+                about_title: "Technical Qualifications & Production Experience",
+                about_exp_title: "Hands-on Experience",
+                exp_geo_role: "IT SysAdmin (Internship)",
+                exp_geo_1: "Corporate management of Active Directory, Azure AD / Entra ID, and Microsoft 365.",
+                exp_geo_2: "Identity governance, Group Policy hierarchy (GPOs), permissions, and granular access control.",
+                exp_geo_3: "Preventative hardware/OS maintenance and workstation security hardening.",
+                exp_hosp_role: "IT Support Technician (Internship)",
+                exp_hosp_1: "Resolution of network, hardware, and critical system incidents in a healthcare environment.",
+                exp_hosp_2: "Deployment and setup of medical-administrative IT equipment with strict uptime needs.",
+                exp_hosp_3: "Tier 1 & 2 technical support adhering to strict hospital Service Level Agreements (SLAs).",
+
+                about_edu_title: "Formal IT Education",
+                edu_1_title: "Specialization Degree in IT Cybersecurity Environments",
+                edu_2_title: "Higher Vocational Degree in Network Computer Systems Administration (ASIR)",
+                edu_3_title: "Vocational Degree in Microcomputer Systems and Networks (SMR)",
+
+                skills_pretitle: "// CAPABILITIES & TECHNICAL MATRIX",
+                skills_title: "Specialization Areas & Tooling",
+                skills_desc: "Engineered stack designed for defense-in-depth and continuous operations.",
+                skill_cat1_title: "Systems & Virtualization",
+                skill_cat1_desc: "Management and deployment of on-premise and virtualized enterprise infrastructure.",
+                skill_cat2_title: "Cybersecurity & SOC",
+                skill_cat2_desc: "Continuous telemetry monitoring, attack vector mitigation, and host hardening.",
+                skill_cat3_title: "Automation & Containers",
+                skill_cat3_desc: "Streamlined maintenance workflows, lightweight orchestration, and administrative scripting.",
+
+                proj_badge: "HOMELAB & TEST ENVIRONMENT",
+                proj_title: "Case Studies & Live Implementations",
+                proj_desc: "Each project includes an executive overview for HR along with an engineering troubleshooting panel.",
+                accordion_tech_btn: "Expand Technical Architecture & Engineering Deep-Dive",
+                proj_view_repo: "Repository / Write-up on GitHub",
+
+                proj1_tag: "Identity & Active Directory",
+                proj1_title: "Enterprise Hybrid Identity Lab & Active Directory Hardening",
+                proj1_exec_desc: "Executive Summary: Implementation of an enterprise domain infrastructure with replication and synchronization to Microsoft Entra ID (Azure AD). Structured Organizational Units following the Principle of Least Privilege (PoLP), centralized group policies to prevent lateral movement, and strict password defenses.",
+                proj1_m1_l: "Architecture:",
+                proj1_m1_v: "AD DS Forest + Cloud Sync",
+                proj1_m2_l: "Applied Policies:",
+                proj1_m2_v: "+35 CIS Security GPOs",
+                proj1_m3_l: "Governance:",
+                proj1_m3_v: "RBAC & Access Control",
+                proj1_tech_h1: "1. Network Topology & Routing Challenge",
+                proj1_tech_p1: "Configured 2 Domain Controllers (Primary DC01 and replica DC02) across isolated subnets. Addressed reverse DNS pointer lookup failures and global catalog replication delays using ntdsutil and repadmin diagnostics.",
+                proj1_tech_h2: "2. Security Hardening",
+                proj1_tech_p2: "Enforced deprecation of legacy NTLMv1 and SMBv1 protocols via centralized policies. Audited and restricted permissions over AdminSDHolder, implementing an administrative Tiering model (Tier 0 for Domain Controllers, Tier 1 for Servers, Tier 2 for Endpoints).",
+
+                proj2_tag: "Incident Detection & SOC",
+                proj2_title: "SIEM/EDR Deployment and Telemetry Telemetry Analysis (Wazuh & Splunk)",
+                proj2_exec_desc: "Executive Summary: Full configuration of a Security Operations (SOC) monitoring stack centralizing logs from Linux hosts and Windows workstations. Created customized detection rules for brute-force attempts, anomalous process trees, and integrity violations.",
+                proj2_m1_l: "Log Ingestion:",
+                proj2_m1_v: "WinEventLog + Sysmon + Auditd",
+                proj2_m2_l: "Detection Latency:",
+                proj2_m2_v: "< 3 Seconds (Live Alerts)",
+                proj2_m3_l: "Defensive Mapping:",
+                proj2_m3_v: "MITRE ATT&CK Framework",
+                proj2_tech_h1: "1. Telemetry Pipeline & Sysmon Setup",
+                proj2_tech_p1: "Rolled out Wazuh agents aligned with SwiftOnSecurity Sysmon profiles on Windows hosts to capture suspicious process execution (EventID 1) and raw socket events (EventID 3). Logs forwarded over TLS-encrypted sessions.",
+                proj2_tech_h2: "2. Threat Simulation & Response",
+                proj2_tech_p2: "Simulated password spraying vectors and obfuscated PowerShell payloads. Verified alerts and triggered Active Response routines to automatically inject defensive firewall drop rules on attacking endpoints.",
+
+                proj3_tag: "Virtualization & Resilience",
+                proj3_title: "Proxmox VE Cluster with Hardened Rootless Docker Workloads",
+                proj3_exec_desc: "Executive Summary: Designed and deployed a resilient homelab cluster on Proxmox VE. Segmented critical workloads using LXC containers and Docker, implementing unprivileged execution, scheduled snapshot backups, and SSL termination via reverse proxy.",
+                proj3_m1_l: "Availability:",
+                proj3_m1_v: "Encrypted Daily Backups",
+                proj3_m2_l: "Isolation Level:",
+                proj3_m2_v: "Unprivileged Containers (LXC)",
+                proj3_m3_l: "Web Security:",
+                proj3_m3_v: "Reverse Proxy + TLS 1.3",
+                proj3_tech_h1: "1. Virtual Networking & Firewall Rules",
+                proj3_tech_p1: "Configured Linux bridges (vmbr0, vmbr1) segregating management interfaces from DMZ workloads. Tuned Proxmox host firewall rules to restrict ICMP and dropped aggressive brute-force attempts with fail2ban.",
+                proj3_tech_h2: "2. Disaster Recovery Strategy (DRP)",
+                proj3_tech_p2: "Automated snapshot generation and differential backup pipelines using Bash and rsync toward an encrypted remote NFS share, maintaining tested recovery time objectives (RTO) below 15 minutes.",
+
+                contact_title: "Looking to strengthen your IT and security operations?",
+                contact_desc: "Open to Junior Systems Administrator, Cybersecurity / SOC Tier 1, and IT Support roles.",
+                footer_rights: "All rights reserved.",
+                footer_status: "Production Ready",
+                footer_top: "Back to Top ↑"
+            }
+        };
+
+        let currentLang = 'es';
+
+        function updateLanguage(lang) {
+            currentLang = lang;
+            document.getElementById('current-lang').textContent = lang.toUpperCase();
+            document.documentElement.lang = lang;
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    // Check if content has strong or formatting tags
+                    if (translations[lang][key].includes('<') || translations[lang][key].includes('&lt;')) {
+                        element.innerHTML = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+        }
+
+        function toggleLanguage() {
+            const newLang = currentLang === 'es' ? 'en' : 'es';
+            updateLanguage(newLang);
+        }
+    </script>
+</body>
+</html>
